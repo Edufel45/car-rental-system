@@ -1,0 +1,32 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+<h1 class="text-center mb-4">Available Cars</h1>
+
+<div class="row">
+    {% for car in cars %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if car.image %}
+            <img src="{{ car.image.url }}" class="card-img-top car-img" alt="{{ car.name }}">
+            {% else %}
+            <div class="card-img-top car-img bg-secondary d-flex align-items-center justify-content-center">
+                <span class="text-white">No Image</span>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ car.name }}</h5>
+                <p class="card-text">
+                    💰 KSh {{ car.price_per_day }}/day<br>
+                    ⛽ {{ car.fuel_type }} | 🚗 {{ car.transmission }}<br>
+                    👥 {{ car.seats }} seats
+                </p>
+                <a href="/car/{{ car.id }}/" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-center">No cars available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

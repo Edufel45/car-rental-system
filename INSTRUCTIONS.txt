@@ -1,0 +1,47 @@
+========================================
+   CAR RENTAL SYSTEM - HOW TO USE
+========================================
+
+HOW TO START THE SYSTEM:
+
+OPTION 1 (Easiest):
+1. Open VS Code
+2. Open this folder (car_rental_project)
+3. Press F5 on your keyboard
+4. The system will start!
+
+OPTION 2 (Double-click):
+1. Double-click "START_SERVER.bat"
+2. Keep the black window open
+
+========================================
+
+HOW TO USE THE WEBSITE:
+
+1. After starting, open Google Chrome
+2. Go to: http://127.0.0.1:8000
+3. Customers see cars and can book
+
+ADMIN PANEL (YOUR CONTROL):
+1. Go to: http://127.0.0.1:8000/admin
+2. Username: car_rental_admin
+3. Password: [YOUR PASSWORD]
+
+WHAT TO DO WHEN CUSTOMER BOOKS:
+
+1. Check admin panel for new bookings
+2. Call customer to confirm
+3. When they pick up car:
+   - Mark booking as "confirmed"
+   - Go to Cars → Edit car → Uncheck "Available"
+4. When car returns:
+   - Check "Available" again
+   - Mark booking as "completed"
+
+========================================
+
+TO STOP THE SYSTEM:
+- In VS Code: Click Stop (red square) or press Shift+F5
+- In batch file: Close the black window or press CTRL+C
+
+========================================

@@ -1,0 +1,49 @@
+{% extends 'cars/base.html' %}
+
+{% block content %}
+<h2>Book Your Car</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5>{{ car.name }}</h5>
+                <p>💰 KSh {{ car.price_per_day }}/day</p>
+                <p>⛽ {{ car.fuel_type }} | 🚗 {{ car.transmission }} | 👥 {{ car.seats }} seats</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label>Full Name *</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Email *</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Pickup Date *</label>
+                <input type="date" name="pickup_date" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Return Date *</label>
+                <input type="date" name="return_date" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Additional Message (Optional)</label>
+                <textarea name="message" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
